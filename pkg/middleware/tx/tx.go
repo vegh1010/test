@@ -2,13 +2,10 @@ package tx
 
 import (
 	"net/http"
-
 	"github.com/jmoiron/sqlx"
-
 	"github.com/rs/zerolog"
-
-	"example.com/test/pkg/env"
-	"example.com/test/pkg/txcontext"
+	"github.com/vegh1010/test/pkg/txcontext"
+	"github.com/vegh1010/test/pkg/env"
 )
 
 // tx -

@@ -2,13 +2,11 @@ package merchant
 
 import (
 	"net/http"
-
 	"github.com/rs/zerolog"
-
-	"example.com/test/pkg/env"
-	"example.com/test/pkg/handler"
-	"example.com/test/pkg/model/merchant"
-	"example.com/test/pkg/resperror"
+	"github.com/vegh1010/test/pkg/handler"
+	"github.com/vegh1010/test/pkg/resperror"
+	"github.com/vegh1010/test/pkg/model/merchant"
+	"github.com/vegh1010/test/pkg/env"
 )
 
 // Data -

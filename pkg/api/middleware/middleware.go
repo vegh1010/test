@@ -2,13 +2,11 @@ package middleware
 
 import (
 	"net/http"
-
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
-
-	"example.com/test/pkg/env"
-	"example.com/test/pkg/handler"
-	"example.com/test/pkg/middleware/tx"
+	"github.com/vegh1010/test/pkg/handler"
+	"github.com/vegh1010/test/pkg/middleware/tx"
+	"github.com/vegh1010/test/pkg/env"
 )
 
 // Middleware -

@@ -4,23 +4,19 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-
-	"example.com/test/pkg/txcontext"
-
 	"github.com/davecgh/go-spew/spew"
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-
 	"database/sql"
 	"strings"
-
-	"example.com/test/pkg/env"
-	"example.com/test/pkg/modelstore"
-	"example.com/test/pkg/resperror"
 	"github.com/gorilla/mux"
 	"github.com/lib/pq"
 	"gopkg.in/olivere/elastic.v6"
+	"github.com/vegh1010/test/pkg/modelstore"
+	"github.com/vegh1010/test/pkg/resperror"
+	"github.com/vegh1010/test/pkg/txcontext"
+	"github.com/vegh1010/test/pkg/env"
 )
 
 // Handler -

@@ -2,10 +2,8 @@ package logger
 
 import (
 	"os"
-
 	"github.com/rs/zerolog"
-
-	"example.com/test/pkg/env"
+	"github.com/vegh1010/test/pkg/env"
 )
 
 // NewLogger returns a logger

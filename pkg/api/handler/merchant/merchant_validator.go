@@ -1,7 +1,7 @@
 package merchant
 
 import (
-	"example.com/test/pkg/resperror"
+	"github.com/vegh1010/test/pkg/resperror"
 )
 
 // Validate valiates merchant request Data.

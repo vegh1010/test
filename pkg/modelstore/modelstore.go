@@ -3,15 +3,10 @@ package modelstore
 
 import (
 	"errors"
-
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
-
-	"example.com/test/pkg/env"
-
-	// models
-
-	"example.com/test/pkg/model/merchant"
+	"github.com/vegh1010/test/pkg/env"
+	"github.com/vegh1010/test/pkg/model/merchant"
 )
 
 // ModelStore - contains a map of model structs

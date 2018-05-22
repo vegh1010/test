@@ -4,11 +4,10 @@ import (
 	"database/sql"
 	"fmt"
 	"strconv"
-
 	"github.com/jmoiron/sqlx"
 	postgres "github.com/lib/pq"
 	"github.com/rs/zerolog"
-	"example.com/test/pkg/env"
+	"github.com/vegh1010/test/pkg/env"
 )
 
 // NewDB gets a new db and returns an error if need be

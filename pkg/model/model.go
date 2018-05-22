@@ -3,13 +3,10 @@ package model
 
 import (
 	"errors"
-
-	"example.com/test/pkg/env"
 	"github.com/jmoiron/sqlx"
-
 	"github.com/rs/zerolog"
-
 	"github.com/davecgh/go-spew/spew"
+	"github.com/vegh1010/test/pkg/env"
 )
 
 // Base -

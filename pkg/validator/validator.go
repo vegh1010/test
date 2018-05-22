@@ -2,8 +2,7 @@ package validator
 
 import (
 	"time"
-
-	"example.com/test/pkg/util"
+	"github.com/vegh1010/test/pkg/util"
 )
 
 // ValidateUUID4 validates that a string is in a UUID format.

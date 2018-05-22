@@ -3,16 +3,12 @@ package router
 
 import (
 	"net/http"
-
-	// pprof
-
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
-
-	"example.com/test/pkg/api/handler/merchant"
-	"example.com/test/pkg/api/middleware"
-	"example.com/test/pkg/env"
+	"github.com/vegh1010/test/pkg/api/middleware"
+	"github.com/vegh1010/test/pkg/env"
+	"github.com/vegh1010/test/pkg/api/handler/merchant"
 )
 
 // Router -

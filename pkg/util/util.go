@@ -6,10 +6,9 @@ import (
 	"fmt"
 	"strings"
 	"time"
-
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"
-	"example.com/test/pkg/wrappederror"
+	"github.com/vegh1010/test/pkg/wrappederror"
 )
 
 // GetUUID returns a unique identifier

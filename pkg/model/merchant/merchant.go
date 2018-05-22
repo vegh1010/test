@@ -3,14 +3,12 @@ package merchant
 import (
 	"database/sql"
 	"fmt"
-
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-
-	"example.com/test/pkg/env"
-	"example.com/test/pkg/model"
-	"example.com/test/pkg/util"
+	"github.com/vegh1010/test/pkg/model"
+	"github.com/vegh1010/test/pkg/env"
+	"github.com/vegh1010/test/pkg/util"
 )
 
 // Record -

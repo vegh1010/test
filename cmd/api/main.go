@@ -4,13 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"runtime"
-
-	"example.com/test/pkg/db"
-	"example.com/test/pkg/env"
-	"example.com/test/pkg/logger"
-	"example.com/test/pkg/model/modelinit"
-
-	"example.com/test/pkg/api/router"
+	"github.com/vegh1010/test/pkg/db"
+	"github.com/vegh1010/test/pkg/model/modelinit"
+	"github.com/vegh1010/test/pkg/api/router"
+	"github.com/vegh1010/test/pkg/env"
+	"github.com/vegh1010/test/pkg/logger"
 )
 
 func main() {
