@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 echo "Launching Migration in Office Dev mode"
 
-#export PGSQL_PORT=5432
-#export PGSQL_PASS=dev
-#export PGSQL_HOST=192.168.120.3
-#export PGSQL_DB_PREFIX=dev
-#export PGSQL_USER=dev
-export PORT=5010
+export APP_DATABASE_HOST=127.0.0.1
+export APP_DATABASE_USER=dev
+export APP_DATABASE_PASS=dev
+export APP_DATABASE_NAME=test
+export APP_DATABASE_PORT=5432
 
 # initialize postgres database gopg_migrations table which manages migration changes
 go run *.go init
