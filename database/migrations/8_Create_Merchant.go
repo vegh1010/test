@@ -13,7 +13,7 @@ func init() {
 		  			dba_name      	TEXT              NOT NULL,
 		  			country_id    	VARCHAR(2)        NOT NULL,
 		  			timezone_id   	TEXT              NOT NULL,
-		  			status        	e_merchant_status NOT NULL DEFAULT 'active',
+		  			status        	` + GetDatabaseName() +`.e_merchant_status NOT NULL DEFAULT 'active',
 					created_at    	TIMESTAMP         NOT NULL DEFAULT now(),
 					updated_at    	TIMESTAMP         NULL,
 					deleted_at    	TIMESTAMP         NULL,

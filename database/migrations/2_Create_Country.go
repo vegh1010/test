@@ -12,7 +12,7 @@ func init() {
 				alpha2_code     VARCHAR(2)        NOT NULL,
 				alpha3_code     VARCHAR(3)        NOT NULL,
 				numeric_code    VARCHAR(3)        NOT NULL,
-				status          e_country_status  NOT NULL DEFAULT 'active',
+				status          ` + GetDatabaseName() +`.e_country_status  NOT NULL DEFAULT 'active',
 				created_at      TIMESTAMP         NOT NULL DEFAULT now(),
 				updated_at      TIMESTAMP         NULL,
 				deleted_at      TIMESTAMP         NULL,

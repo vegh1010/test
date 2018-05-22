@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gopkg.in/pg.v5"
 	"os"
+	"flag"
 )
 
 //initialize database connection
@@ -14,6 +15,7 @@ func DBConnect() (*pg.DB) {
 	for key, value := range envs {
 		fmt.Println(key, ":", value)
 	}
+	flag.Parse()
 
 	dbusername := envs["APP_DATABASE_USER"]
 	dbpassword := envs["APP_DATABASE_PASS"]
@@ -53,7 +55,7 @@ func GetEnv() (map[string]string) {
 		if field == "" {
 			panic("Environment " + envField + " Not Found")
 		}
-		configs[field] = field
+		configs[envField] = field
 	}
 
 	return configs

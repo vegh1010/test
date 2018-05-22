@@ -8,7 +8,7 @@ func init() {
 	migrations.Register(func(db migrations.DB) error {
 		upQuery := `CREATE TABLE ` + GetDatabaseName() +`.timezone (
 		  			id              TEXT                NOT NULL,
-		  			status          e_timezone_status   NOT NULL DEFAULT 'active',
+		  			status          ` + GetDatabaseName() +`.e_timezone_status   NOT NULL DEFAULT 'active',
 					created_at      TIMESTAMP           NOT NULL DEFAULT now(),
 					updated_at      TIMESTAMP           NULL,
 					deleted_at      TIMESTAMP           NULL,
