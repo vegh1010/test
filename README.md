@@ -52,7 +52,7 @@ At the root of your `$GOPATH`
 ```bash
 mkdir -p src/example.com
 cd src/example.com
-
+clone https://github.com/alienspaces/test
 cd test
 ```
 
