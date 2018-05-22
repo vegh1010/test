@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Developer usage only script to start up application
+# - Running this script will:
+#   - Restart the database container
+#   - Execute database migrations
+#   - Seed database data
+status=0
+source ${BASH_SOURCE%/*}/environment || status=$?
+if [ $status -ne 0 ]; then
+    echo "Establishing environment error, cannot continue" >&2
+    exit $status
+fi
+
+# include retry
+if [ ! -f "./dev-bin/retry" ]; then
+    echo "Missing ./dev-bin/retry, cannot start";
+    exit 1
+fi
+source ./dev-bin/retry
+
+# stop database
+source ./dev-bin/stop-database
+
+# start database
+echo "=> Starting database";
+docker run --name test-database \
+  -e POSTGRES_USER=$APP_DATABASE_USER \
+  -e POSTGRES_PASSWORD=$APP_DATABASE_PASS \
+  -e POSTGRES_DB=$APP_DATABASE_NAME \
+  -p ${APP_DATABASE_PORT}:${APP_DATABASE_PORT} -d postgres:9.6.5
+
+export PGPASSWORD=$APP_DATABASE_PASS
+retry_cmd psql --host=$APP_DATABASE_HOST --port=${APP_DATABASE_PORT} --username=$APP_DATABASE_USER $APP_DATABASE_NAME -c "CREATE EXTENSION pgcrypto"
+echo "=> Started database on ${APP_DATABASE_HOST}:${APP_DATABASE_PORT}"
+
+# migrate
+echo "=> Executing database migrations";
+./dev-bin/db-migrate-up
+

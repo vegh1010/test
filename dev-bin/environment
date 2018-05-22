@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+# Establishes and validates required environment
+function verify_env {
+    echo "=> (environment) Verifying environment"
+
+    if [ -z "${APP_ENV}" ]; then
+        echo "=> (environment) Missing APP_ENV, cannot continue"
+        exit 1
+    fi
+
+    # required for all environments
+    ENV_VARS=( \
+
+        # general
+        'APP_ENV' \
+	    'APP_URL' \
+		'APP_HOME' \
+        'APP_LOG_LEVEL' \
+        'APP_TIMED_REQUESTS' \
+        'APP_PRETTY_LOGS' \
+		'APP_SERVER_PORT' \
+
+        # database
+		'APP_DATABASE_HOST' \
+		'APP_DATABASE_NAME' \
+		'APP_DATABASE_PORT' \
+		'APP_DATABASE_USER' \
+		'APP_DATABASE_PASS' \
+        'APP_DATABASE_OWNER_USER' \
+        'APP_DATABASE_OWNER_PASS' \
+    );
+
+    # verify
+    MISSING=0
+    for ENV_VAR_NAME in ${ENV_VARS[@]}; do
+        if ! [[ -n ${!ENV_VAR_NAME} ]]; then
+            echo "=> (environment) Variable ${ENV_VAR_NAME} undefined"
+            MISSING=1
+            continue
+        fi
+
+        # masked
+        if [[ "${ENV_VAR_NAME}" = *"PASS" ]] || [[ "${ENV_VAR_NAME}" = *"KEY" ]]; then
+            echo "=> (environment) ${ENV_VAR_NAME} => ********"
+        else
+            echo "=> (environment) ${ENV_VAR_NAME} => ${!ENV_VAR_NAME}"
+        fi
+    done
+
+    if [[ "$MISSING" == "1" ]]; then
+        echo "=> (environment) Variables missing, cannot continue"
+        exit 1
+    fi
+}
+
+# environment
+if [ -f ".env" ]; then
+    echo "=> (environment) Sourcing .env"
+    source .env
+fi
+
+# go present?
+FOUND_GO=$(which go)
+if ! [ -z "$FOUND_GO" ]; then
+    # go version
+    REQUIRED_VERSION=1.9.2
+    VERSION=$(go version)
+    if [[ "$VERSION" != *"${REQUIRED_VERSION}"* ]]; then
+        echo "(environment) Go version ${REQUIRED_VERSION} is required, please check your Go version and try again"
+        exit 1
+    fi
+fi
+
+# verify environment
+verify_env
+

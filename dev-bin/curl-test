@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+read -r -d '' POST_DATA <<EOF
+{
+    "data":{
+		  "name": "Test Merchant",
+      "short_name": "Test Merchant",
+      "dba_name": "Test Merchant",
+      "country": "US",
+      "timezone": "America/New_York"
+    }
+}
+
+EOF
+
+curl -X POST --data "${POST_DATA}" "http://localhost:${APP_SERVER_PORT}/api/merchants"

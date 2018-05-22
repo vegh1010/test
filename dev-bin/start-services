@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Developer usage only script to start up application
+# - Running this script will:
+#   - Restart the oracle-xe-11g database container
+#   - Execute database migrations
+#   - Restart the memcached container
+status=0
+source ${BASH_SOURCE%/*}/environment || status=$?
+if [ $status -ne 0 ]; then
+    echo "Establishing environment error, cannot continue" >&2
+    exit $status
+fi
+
+# include retry
+if [ ! -f "./dev-bin/retry" ]; then
+echo "Missing ./dev-bin/retry, cannot start";
+exit 1
+fi
+source ./dev-bin/retry
+
+# stop services
+source ./dev-bin/stop-services
+
+# start database and exectute migrations
+source ./dev-bin/start-database
+

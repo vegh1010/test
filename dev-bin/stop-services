@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Developer usage only script to stop application development services
+# - Running this script will:
+#   - Stop the database container
+#   - Stop the elasticsearch container
+status=0
+source ${BASH_SOURCE%/*}/environment || status=$?
+if [ $status -ne 0 ]; then
+    echo "Establishing environment error, cannot continue" >&2
+    exit $status
+fi
+
+# include retry
+if [ ! -f "./dev-bin/retry" ]; then
+    echo "Missing ./dev-bin/retry, cannot start";
+    exit 1
+fi
+source ./dev-bin/retry
+
+# stop database
+source ./dev-bin/stop-database
+

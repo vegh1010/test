@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Developer usage only script to start up application
+echo "=> Stopping database";
+docker stop test-database && docker rm test-database

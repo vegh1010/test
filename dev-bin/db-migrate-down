@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+status=0
+source ${BASH_SOURCE%/*}/environment || status=$?
+if [ $status -ne 0 ]; then
+    echo "Establishing environment error, cannot continue" >&2
+    exit $status
+fi
+
+URL="postgres://$APP_DATABASE_OWNER_USER:$APP_DATABASE_OWNER_PASS@$APP_DATABASE_HOST:$APP_DATABASE_PORT/$APP_DATABASE_NAME?sslmode=disable"
+
+echo "=> Migrate URL $URL"
+
+migrate \
+  -path ./database/migrations \
+  -database $URL down $1
+
+

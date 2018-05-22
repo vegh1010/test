@@ -1,0 +1,81 @@
+hash: 257cb8b478569132d18554458ae2c5c09c5564e22add23161618206ec1de2321
+updated: 2018-05-22T15:10:28.785631+10:00
+imports:
+- name: github.com/aws/aws-sdk-go
+  version: cf00d544fc3c02f31e05e8d02444a1325d3a840b
+- name: github.com/davecgh/go-spew
+  version: 346938d642f2ec3594ed81d874461961cd0faa76
+  subpackages:
+  - spew
+- name: github.com/go-playground/universal-translator
+  version: b32fa301c9fe55953584134cb6853a13c87ec0a1
+- name: github.com/google/uuid
+  version: 064e2069ce9c359c118179501254f67d7d37ba24
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/mux
+  version: e3702bed27f0d39777b0b37b664b6280e8ef8fbf
+- name: github.com/icrowley/fake
+  version: e64cc2cf92049a299f359734c6ea76073f2a8b2c
+- name: github.com/jmoiron/sqlx
+  version: d9bd385d68c068f1fabb5057e3dedcbcbb039d0f
+  subpackages:
+  - reflectx
+- name: github.com/joho/godotenv
+  version: a79fa1e548e2c689c241d10173efd51e5d689d5b
+- name: github.com/joho/sqltocsv
+  version: f3fd116fddab4bb4a3a987deaa3d53d3f6f1aa77
+- name: github.com/lib/pq
+  version: 8c6ee72f3e6bcb1542298dd5f76cb74af9742cec
+  subpackages:
+  - oid
+- name: github.com/mailru/easyjson
+  version: 8b799c424f57fa123fc63a99d6383bc6e4c02578
+  subpackages:
+  - buffer
+  - jlexer
+  - jwriter
+- name: github.com/mattes/migrate
+  version: 035c07716cd373d88456ec4d701402df52584cb4
+  subpackages:
+  - cli
+  - database/postgres
+  - source/github
+- name: github.com/olivere/elastic
+  version: dc11d9b87f1a959dd65a760471161a30cbbc6cb2
+  subpackages:
+  - config
+  - uritemplates
+- name: github.com/pkg/errors
+  version: 816c9085562cd7ee03e7f8188a1cfd942858cded
+- name: github.com/pkg/sftp
+  version: d2aa419835609d317c34baae11bc345d1f9971a7
+- name: github.com/rs/cors
+  version: feef513b9575b32f84bafa580aad89b011259019
+- name: github.com/rs/zerolog
+  version: fb469685aa8f19d742eff3f56a0bd51a23265829
+  subpackages:
+  - internal/cbor
+  - internal/json
+  - log
+- name: github.com/shopspring/decimal
+  version: 69b3a8ad1f5f2c8bd855cb6506d18593064a346b
+- name: github.com/stretchr/testify
+  version: 12b6f73e6084dad08a7c6e575284b177ecafbc71
+  subpackages:
+  - assert
+- name: github.com/tomasen/realip
+  version: f0c99a92ddcedd3964a269d23c8e89d9a9229be6
+- name: gopkg.in/go-playground/validator.v9
+  version: f28cb45dc0f0f406ba2015cdb59a5203ad220bc2
+- name: gopkg.in/gomail.v2
+  version: 81ebce5c23dfd25c6c67194b37d3dd3f338c98b1
+- name: gopkg.in/olivere/elastic.v6
+  version: dc11d9b87f1a959dd65a760471161a30cbbc6cb2
+- name: gopkg.in/testfixtures.v2
+  version: f79bf941e2785516a66bcf4de9a21b0b827ed716
+testImports:
+- name: github.com/pmezard/go-difflib
+  version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
+  subpackages:
+  - difflib

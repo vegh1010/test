@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "=> Installing api to ${GOPATH}/bin/test-api"
+go build -o ${GOPATH}/bin/test-api ./cmd/api
+
+

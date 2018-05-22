@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+function retry_curl {
+    local n=1
+    local max=5
+    local delay=5
+    local delay_inc=5
+    while true; do
+        "$@"
+        if [ $? -gt 0 ]; then
+            if [[ $n -lt $max ]]; then
+                ((n++))
+                echo "=> Command failed. Trying again in $delay seconds. Attempt $n/$max:"
+                sleep $delay;
+                delay=$[$delay+$delay_inc]
+            else
+                echo "=> Command failed after $n attempts, exiting.." >&2
+                exit 1
+            fi
+        else
+            break
+        fi
+    done
+}
